@@ -8,7 +8,8 @@
     "build": "tsc && node copyEjs.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "start": "node dist/server.js"
   },
   "repository": {
     "type": "git",
