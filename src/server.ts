@@ -56,7 +56,7 @@ app.get('/alumnos', (req, res) => {
 
 });
 
-app.use('/calculadora' , calculatorRouter)
+app.use('/calculator' , calculatorRouter)
 app.use('/multiplyTable', multiplyTableRouter)
 app.use('/factorial', factorialRouter)
 
