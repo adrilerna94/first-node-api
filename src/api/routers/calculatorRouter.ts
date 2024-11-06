@@ -1,4 +1,4 @@
-import {sum, substract, division, multiply } from "../controllers/mathController"
+import {sum, substract, division, multiply } from '../controllers/CalculatorController'
 import { Router } from "express";
 
 export const calculatorRouter = Router();

@@ -30,12 +30,12 @@ function substract(req: Request, res: Response) {
 
 function division(req: Request, res: Response) {
   //get from body numbers
-  const { d, f } = req.body;
-  const isValidDivision = _validateDivision(d, f);
+  const { a, b } = req.body;
+  const isValidDivision = _validateDivision(a, b);
   if (!isValidDivision) {
     return res.status(httpStatus.UNPROCESSABLE_ENTITY).send('División por zero'); //status(422)
   }
-  const result: number = _division(d, f);
+  const result: number = _division(a, b);
   return res.json({ division: `${result}` });
 }
 
