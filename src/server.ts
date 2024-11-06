@@ -1,8 +1,16 @@
+import {calculatorRouter}  from "./api/routers/calculatorRouter"
+import { factorialRouter } from "./api/routers/factorialRouter";
+import { multiplyTableRouter } from "./api/routers/multiplyTableRouter";
+
 import './loadEnvironment.js';
 import express from 'express';
 
 // Initialize express
 const app = express();
+
+app.use(express.json()) // <-- esto de aqui me convierte el body en json.
+// https://www.geeksforgeeks.org/express-js-express-json-function/
+
 const port = process.env.HOST_PORT ?? '3000';
 const alumnos:string [] = [
   "Sofía Ramírez",
@@ -48,8 +56,13 @@ app.get('/alumnos', (req, res) => {
 
 });
 
+app.use('/calculadora' , calculatorRouter)
+app.use('/multiplyTable', multiplyTableRouter)
+app.use('/factorial', factorialRouter)
+
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  console.log(`⚡️[server]: Server is running at http://localhost:${port}/calculadora`);
 });
 
 
